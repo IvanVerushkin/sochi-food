@@ -61,3 +61,75 @@ html{
       }
    }
 }
+
+.swiper {
+   &__arrow {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-top: 4px solid $dark;
+      border-right: 4px solid $dark;
+      margin-right: 60px;
+      top: 370px;
+      cursor: pointer;
+      z-index: 1;
+      &:hover {
+         border-color: $green;
+      }
+      &--prev {
+         transform: rotate(-135deg);
+         left: 15px;
+      }
+      &--next {
+         transform: rotate(45deg);
+         right: -45px;
+      }
+   }
+   &__wrapper {
+      position: relative;
+      display: inline-flex;
+      min-width: 0;
+   }
+   &__item {
+      height: 637px;
+      &--1 {
+         background-size: contain;
+         background-repeat: no-repeat;
+      }
+      &--2 {
+         background-size: cover;
+         background-position: center;
+      }
+   }
+   &__content {
+      position: absolute;
+      top: 60%;
+      max-width: 400px;
+      margin-left: 60px;
+      transition: all 0.7s;
+      opacity: 0;
+      z-index: 2;
+      &.gotoup {
+         transform: translateY(-105%);
+         opacity: 1;
+      }
+   }
+   &__title {
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 33px;
+   }
+   &__subtitle {
+      font-weight: 300;
+      margin-bottom: 30px;
+   }
+   &__link {
+      padding: 12px 24px;
+      background-color: $green;
+      color: #fff;
+      font-size: 18px;
+      text-align: center;
+      padding-top: 14px;
+   }
+}
