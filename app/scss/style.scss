@@ -133,3 +133,80 @@ html{
       padding-top: 14px;
    }
 }
+
+.menu {
+   &__inner {
+      padding: 96px 0 126px;
+      background-color: #fff;
+   }
+   &__items {
+      justify-content: space-around;
+      align-items: baseline;
+      margin-bottom: 100px;
+   }
+   &__item {
+      max-width: 175px;
+      text-align: center;
+      img {
+         transition-duration: .3s;
+         &:hover {
+            transform: scale(1.1);
+         }
+         
+      }
+      p {
+         font-weight: 700;
+         color: $dark;
+         text-decoration: underline;
+         margin-top: 15px;
+      }
+   }
+}
+
+.info {
+   &--middle {
+      margin: 60px 0;
+   }
+   &__title {
+      font-size: 38px;
+      font-weight: 700;
+      text-align: center;
+      color: $green;
+      margin-bottom: 25px;
+   }
+   &__row {
+      justify-content: space-between;
+      &--conter-row {
+         flex-direction: row-reverse;
+      }
+   }
+   &__img {
+      margin-right: 30px;
+      &--middle {
+         margin-right: 0;
+         margin-left: 20px;
+      }
+   }
+   &__block {
+      &--right {
+         text-align: right;
+      }
+   }
+   &__text {
+      margin-top: 15px;
+      max-width: 97%;
+      margin-right: 0;
+   }
+   &__link-btn {
+      margin-top: 15px;
+      transition: all .3s;
+      &--middle {
+         margin-right: 16px;
+      }
+      &:hover {
+         background-color: $green;
+         border: 1px solid $green;
+         color: #fff;
+      }
+   }
+}
