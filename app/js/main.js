@@ -1,8 +1,18 @@
-const sl_content1 = document.querySelector('.swiper__content--1');
-const sl_content2 = document.querySelector('.swiper__content--2');
+const sl_content = document.querySelectorAll('.swiper__content');
 const slide1 = document.querySelector('.swiper__item--1');
 const slide2 = document.querySelector('.swiper__item--2');
 
+function removeEffect(){
+    for (let i = 0; i < sl_content.length; i++) {
+        sl_content[i].classList.remove('gotoup');
+    }
+    // sl_content.forEach(function(sliderContent) {
+    //     sliderContent.classList.remove('gotoup');
+    // })
+    // if (sl_content.classList.contains('gotoup')) {
+    //     sl_content.classList.remove('gotoup');
+    // }
+}
 
 
 $(function(){
@@ -16,7 +26,18 @@ $(function(){
             nextEl: '.swiper__arrow--next',
             prevEl: '.swiper__arrow--prev'
         }
+        // onTransitionStart: function(slider){
+        //     removeEffect();
+        //     let activeSlider = document.querySelector('.swiper-slide-active > .swiper__content ');
+        //     activeSlider.classList.add('gotoup');
+        // }
     });
+    swiper.on('slideChangeTransitionStart', function () {
+        removeEffect();
+        let activeSlider = document.querySelector('.swiper-slide-active > .swiper__content ');
+        activeSlider.classList.add('gotoup');
+    });
+    
     // swiper.on('slideChange', function () {
     //     for (i = 0; i < sl_content1.length; i++) {
     //         for (k = 0; k < slide1.length; k++) {
@@ -49,16 +70,18 @@ $(function(){
     //     }
     // });
 
-    swiper.on('slideChange', function () {
-        if (slide1.classList.contains('swiper-slide-active')) {
-            sl_content1.classList.remove('gotoup');
-            sl_content2.classList.add('gotoup');
-        }
-        if (slide2.classList.contains('swiper-slide-active')) {
-            sl_content2.classList.remove('gotoup');
-            sl_content1.classList.add('gotoup');
-        }
-    });
+    // swiper.on('slideChange', function () {
+    //     if (slide1.classList.contains('swiper-slide-active')) {
+    //         sl_content1.classList.remove('gotoup');
+    //         sl_content2.classList.add('gotoup');
+    //     }
+    //     if (slide2.classList.contains('swiper-slide-active')) {
+    //         sl_content2.classList.remove('gotoup');
+    //         sl_content1.classList.add('gotoup');
+    //     }
+    //     console.log(swiper.realIndex);
+
+    // });
     
     
 
@@ -71,6 +94,7 @@ $(function(){
     // console.log(content);
 
 });
+
 
 // // const content = document.querySelectorAll('.swiper__content');
 // const arrow = document.querySelector('.swiper__arrow');
